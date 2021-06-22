@@ -1,3 +1,4 @@
-const log = require('./logger');
+var logger = require('./logger');
 
-log('message');
+
+
