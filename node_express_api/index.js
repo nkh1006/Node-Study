@@ -14,6 +14,7 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
   console.log('[TEST]!');
+  console.log(users);
   res.send('Hello from Homepage');
 });
 
