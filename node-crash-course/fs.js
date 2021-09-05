@@ -1,11 +1,11 @@
-const fs = require('fs');
+const fs = require("fs");
 
-fs.writeFile('message.txt', 'Hello there node', (err) => {
-  if(err) throw err;
+fs.writeFile('message.txt', 'Hello there node', (error) => {
+  if (error) throw error;
   console.log('file has been written');
 });
 
-fs.readFile('./message.txt', 'utf8', (err, data) => {
-  if(err) throw err;
+fs.readFile('message.txt', 'utf8', ((error, data) => {
+  if (error) throw error;
   console.log(data);
-});
+}));

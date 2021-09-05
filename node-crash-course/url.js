@@ -1,10 +1,10 @@
-const url = require('url');
+const url = require("url");
 
-const adress = 'http://localhost:8080/default.html?year=2017&month=february';
+const adress = "http://localhost:8080/default.html?year=2017&month=february";
 
-const parsedUrl = url.parse(adress, true);
+const paresdUrl = url.parse(adress, true);
 
-console.log(parsedUrl.host);
-console.log(parsedUrl.pathname);
-console.log(parsedUrl.query);
-console.log(parsedUrl.query.year);
+// 기본적인 정보가 다 들어가 있다.
+// console.log(paresdUrl);
+
+console.log(paresdUrl.query);
