@@ -1,6 +1,14 @@
-<h2>Hello World !!!</h2>
+<h2>Hello World !</h2>
 <p>Welcome to my app</p>
 
-<p>My name is {{ name }}</p>
+{{#if isDisplayName}}
+  <p>My name is {{ name }}</p>
+  {{else}}
+  <p>No name found !</p>
+{{/if}}
 
-<p>I am {{ age }} old</p>
+{{#if isAgeEnabled}}
+  <p>I am {{ age }}</p>
+  {{else}}
+  <p>No age provied !</p>  
+{{/if}}

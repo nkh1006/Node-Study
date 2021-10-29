@@ -16,12 +16,19 @@ app.get('/', (req, res) => {
     title: 'Home Page',
     name: 'my Name',
     age: 5,
-    isCompleted: false
+    isDisplayName: true,
+    isAgeEnabled: true
   });
 });
 
 app.get('/about', (req, res) => {
   res.render("about", { title: 'About Me' });
+});
+
+app.get('/dashboard', (req, res) => {
+  res.render("dashboard", { 
+    isListEnabled: false
+  });
 });
 
 app.listen(8080, () => {
