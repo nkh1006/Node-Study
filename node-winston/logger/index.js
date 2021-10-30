@@ -1,14 +1,11 @@
-const { createLogger, format, transports } = require('winston');
-const { combine, timestamp, printf } = format;
+const buildDevLogger = require('./dev-logger');
+const buildProdLogger = require('./prod-logger');
 
-const logFormat = printf(({ level, message, timestamp }) => {
-  return `${timestamp} ${level}: ${message}`;
-});
-
-const logger = createLogger({
-  format: combine(timestamp({format: 'YYYY-MM-DD HH:mm:ss'}), logFormat),
-  // defaultMeta: { service: 'user-service' },
-  transports: [new transports.Console()],
-});
+let logger = null;
+if (process.env.NODE_ENV === 'development') {
+  logger = buildDevLogger();
+} else {
+  logger = buildProdLogger();
+}
 
 module.exports = logger;
