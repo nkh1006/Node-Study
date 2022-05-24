@@ -1,8 +1,9 @@
-const logger = require('./logger');
+const logger = require('./logger/index');
 
-logger.info('text info');
+logger.info('text info', {meta1: 'meta1'});
 logger.warn('text warn');
 logger.error('text error');
+logger.error(new Error('something went wrong'));
 
 /**
   * console.log('Hello');
